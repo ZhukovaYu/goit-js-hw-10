@@ -39,11 +39,13 @@ function markup(countries) {
     return;
   }
   if (countOfCountries <= 10 && countOfCountries >= 2) {
-    createCountryList(countries);
+      createCountryList(countries);
+      refs.countryInfo.innerHTML = '';
     return;
   }
   if (countOfCountries === 1) {
-   createCountryCard(countries);
+      createCountryCard(countries);
+      refs.countryList.innerHTML = '';
   }
 }
 
@@ -68,7 +70,6 @@ function createCountryCard([
     languages,
   },
 ]) {
-    refs.countryList.innerHTML = '';
     const listOfLangs = Object.values(languages).join(', ');
     refs.countryInfo.innerHTML = `
     <div class="country-name country-name--highlight">
